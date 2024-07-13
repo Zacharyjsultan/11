@@ -1,5 +1,6 @@
 import logo from "./logo1.png";
 import "./App.css";
+import { Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           Email Me!
         </a>
       </header>
+      <Routes></Routes>
     </div>
   );
 }
