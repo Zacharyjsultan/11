@@ -1,22 +1,20 @@
-import logo from "./logo1.png";
+// import logo from "./logo1.png";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Landing from "./Components/Landing";
+import Bio from "./Components/Bio";
+import Resume from "./Components/Resume";
+import Skills from "./Components/Skills";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Is this my portfolio or just a cookbook?</p>
-        <p>Coming Sometime!</p>
-        <a
-          className="App-link"
-          href="mailto:zacharyjsultan@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Email Me!
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/bio" element={<Bio />} />
+        <Route path="/resume" element={<Resume />} />
+        <Route path="/testtest12" element={<Skills />} />
+      </Routes>
     </div>
   );
 }
