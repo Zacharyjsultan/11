@@ -1,5 +1,11 @@
 import React from "react";
+import Header from "./Header/Header";
 
 export default function Resume() {
-  return <div>Resume</div>;
+  return (
+    <div>
+      <Header />
+      <div></div>
+    </div>
+  );
 }
