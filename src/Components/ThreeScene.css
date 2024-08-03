@@ -1,5 +1,5 @@
 div {
-  width: 100%;
-  height: 100vh; /* Full height of the viewport */
+  width: 60%;
+  height: 180vh; /* Full height of the viewport */
   overflow: hidden; /* Prevent scrollbars */
 }
