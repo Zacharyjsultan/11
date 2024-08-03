@@ -19,7 +19,7 @@ const createNumberTexture = (number) => {
   return new THREE.CanvasTexture(canvas);
 };
 
-const ThreeScene = () => {
+const ThreeScene = ({ onClick }) => {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -103,7 +103,11 @@ const ThreeScene = () => {
     };
   }, []);
 
-  return <div ref={mountRef}></div>;
+  return (
+    <button onClick={onClick} className="three-scene-button">
+      <div ref={mountRef} className="three-scene"></div>
+    </button>
+  );
 };
 
 export default ThreeScene;
