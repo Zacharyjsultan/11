@@ -2,15 +2,21 @@ import React, { useRef, useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-// Function to create a canvas texture with a number
-const createNumberTexture = (number) => {
+const createNumberTexture = (number, backgroundColor = "#ffffff") => {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
-  canvas.width = 156;
-  canvas.height = 156;
-  context.fillStyle = "white";
+  canvas.width = 256;
+  canvas.height = 256;
+
+  if (!context) {
+    console.error("Failed to get canvas 2D context");
+    return new THREE.CanvasTexture(canvas);
+  }
+
+  context.fillStyle = backgroundColor;
   context.fillRect(0, 0, canvas.width, canvas.height);
-  context.font = "80px Arial";
+
+  context.font = "120px Arial";
   context.fillStyle = "black";
   context.textAlign = "center";
   context.textBaseline = "middle";
@@ -25,7 +31,8 @@ const ThreeScene = ({ onClick }) => {
   useEffect(() => {
     const currentMount = mountRef.current;
 
-    // Set up the scene, camera, and renderer
+    if (!currentMount) return;
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -38,17 +45,15 @@ const ThreeScene = ({ onClick }) => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     currentMount.appendChild(renderer.domElement);
 
-    // Create textures for each face of the die
     const textures = [
-      createNumberTexture("18"),
-      createNumberTexture("21"),
-      createNumberTexture("36"),
-      createNumberTexture("420"),
-      createNumberTexture("50"),
-      createNumberTexture("69"),
+      createNumberTexture("18", "#f5d5d5"), // Front
+      createNumberTexture("21", "#f5d5d5"), // Back
+      createNumberTexture("36", "#f5f5dc"), // Top
+      createNumberTexture("420", "#f5f5dc"), // Bottom
+      createNumberTexture("50", "#f5d5d5"), // Right
+      createNumberTexture("69", "#f5d5d5"), // Left
     ];
 
-    // Create the cube with different textures for each face
     const geometry = new THREE.BoxGeometry();
     const materials = textures.map(
       (texture) => new THREE.MeshBasicMaterial({ map: texture })
