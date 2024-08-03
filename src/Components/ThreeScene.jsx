@@ -6,11 +6,11 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 const createNumberTexture = (number) => {
   const canvas = document.createElement("canvas");
   const context = canvas.getContext("2d");
-  canvas.width = 256;
-  canvas.height = 256;
+  canvas.width = 156;
+  canvas.height = 156;
   context.fillStyle = "white";
   context.fillRect(0, 0, canvas.width, canvas.height);
-  context.font = "150px Arial";
+  context.font = "80px Arial";
   context.fillStyle = "black";
   context.textAlign = "center";
   context.textBaseline = "middle";
@@ -40,12 +40,12 @@ const ThreeScene = ({ onClick }) => {
 
     // Create textures for each face of the die
     const textures = [
-      createNumberTexture("1"),
-      createNumberTexture("2"),
-      createNumberTexture("3"),
-      createNumberTexture("4"),
-      createNumberTexture("5"),
-      createNumberTexture("6"),
+      createNumberTexture("18"),
+      createNumberTexture("21"),
+      createNumberTexture("36"),
+      createNumberTexture("420"),
+      createNumberTexture("50"),
+      createNumberTexture("69"),
     ];
 
     // Create the cube with different textures for each face

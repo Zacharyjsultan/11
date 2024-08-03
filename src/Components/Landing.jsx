@@ -9,7 +9,9 @@ export default function Landing() {
       <Header />
       <div>Landing</div>
       <div>
-        <ThreeScene />
+        <div className="tacos">
+          <ThreeScene />
+        </div>
       </div>
     </div>
   );
