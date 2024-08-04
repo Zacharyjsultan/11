@@ -2,7 +2,7 @@
 
 ## About Me
 
-Introduce yourself briefly. My name is Zach and I am passionate about art, food, coding, and personal growth.
+
 
 # Art
 
