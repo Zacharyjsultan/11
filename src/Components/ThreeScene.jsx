@@ -79,8 +79,8 @@ const ThreeScene = ({ onClick }) => {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
-      die.rotation.x += 0.01;
-      die.rotation.y += 0.01;
+      die.rotation.x += 0.03;
+      die.rotation.y += 0.02;
 
       // Ensure edges rotate with the cube
       edges.rotation.x = die.rotation.x;
@@ -92,7 +92,6 @@ const ThreeScene = ({ onClick }) => {
 
     animate();
 
-    // Handle window resize
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
