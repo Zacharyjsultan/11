@@ -13,7 +13,7 @@ const Header = () => {
           </li>
           <li className="nav-item">
             <a href="/bio" className="nav-link">
-              Bio
+              Bio or sumtung
             </a>
           </li>
           <li className="nav-item">
